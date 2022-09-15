@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "declaration": true,
+        "pretty": true,
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "lib": ["esnext"],
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "baseUrl": "./",
+        "isolatedModules": true // https://preconstruct.tools/guides/building-typescript-packages
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "**/*.typegen.ts", "example", "tests"],
+    "types": ["node", "vitest/importMeta"]
+}

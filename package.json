@@ -1,0 +1,48 @@
+{
+    "name": "ts-lib-template",
+    "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/astahmer/ts-lib-template.git"
+    },
+    "author": "Alexandre Stahmer <alexandre.stahmer@gmail.com>",
+    "main": "dist/ts-lib-template.cjs.js",
+    "module": "dist/ts-lib-template.esm.js",
+    "scripts": {
+        "dev": "preconstruct watch",
+        "build": "preconstruct build",
+        "test": "vitest",
+        "release": "pnpm test && pnpm build && pnpm publish && git push"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "^7.19.1"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.19.1",
+        "@babel/preset-typescript": "^7.18.6",
+        "@preconstruct/cli": "^2.2.1",
+        "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+        "@types/node": "^18.7.18",
+        "@types/prettier": "^2.7.0",
+        "nodemon": "^2.0.19",
+        "prettier": "^2.7.1",
+        "tsx": "^3.9.0",
+        "type-fest": "^2.19.0",
+        "typescript": "^4.8.3",
+        "vitest": "^0.22.1"
+    },
+    "preconstruct": {
+        "entrypoints": [
+            "index.ts"
+        ]
+    },
+    "files": [
+        "src",
+        "dist"
+    ],
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    }
+}
