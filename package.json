@@ -1,13 +1,13 @@
 {
-    "name": "ts-lib-template",
+    "name": "eslint-plugin-astahmer",
     "version": "0.1.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/astahmer/ts-lib-template.git"
+        "url": "https://github.com/astahmer/eslint-plugin-astahmer.git"
     },
     "author": "Alexandre Stahmer <alexandre.stahmer@gmail.com>",
-    "main": "dist/ts-lib-template.cjs.js",
-    "module": "dist/ts-lib-template.esm.js",
+    "main": "dist/eslint-plugin-astahmer.cjs.js",
+    "module": "dist/eslint-plugin-astahmer.esm.js",
     "scripts": {
         "dev": "preconstruct watch",
         "build": "preconstruct build",
