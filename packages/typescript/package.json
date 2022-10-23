@@ -1,6 +1,6 @@
 {
     "name": "@astahmer/eslint-config-ts",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "repository": {
         "type": "git",
         "url": "https://github.com/astahmer/eslint-config.git"
