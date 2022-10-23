@@ -1,8 +1,8 @@
-import { defineConfig } from "eslint-define-config";
+// @ts-check
+const { defineConfig } = require("eslint-define-config");
 
-export default defineConfig({
+module.exports = defineConfig({
     env: { browser: true, jest: true, es2021: true },
-    root: true,
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: 2022,
@@ -37,7 +37,6 @@ export default defineConfig({
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:diff/diff",
         "plugin:sonarjs/recommended",
         "plugin:unicorn/recommended",
         "plugin:import/recommended",
