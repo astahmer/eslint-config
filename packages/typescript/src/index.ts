@@ -1,48 +1,43 @@
-// @ts-check
-const { defineConfig } = require("eslint-define-config");
+import { defineConfig } from "eslint-define-config";
 
-module.exports = defineConfig({
+export default defineConfig({
     env: { browser: true, jest: true, es2021: true },
     root: true,
     parser: "@typescript-eslint/parser",
     parserOptions: {
-        jsx: true,
-        project: ["./tsconfig.eslint.json"],
         ecmaVersion: 2022,
-        ecmaFeatures: {
-            jsx: true,
-        },
     },
-    settings: {
-        react: {
-            version: "detect", // React version. "detect" automatically picks the version you have installed.
-        },
-        // https://github.dev/remix-run/remix/blob/e77e2eb731551db1e70c7c3bd5f73389b97a9574/packages/remix-eslint-config/settings/import.js#L2-L13
-        "import/ignore": ["node_modules", "\\.(css|md|svg|json)$"],
-        "import/resolver": {
-            alias: {
-                map: [["@", "./src"]],
-                extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
-            },
-        },
-    },
-    ignorePatterns: ["*.typegen.ts", "asyncThrottle.ts", "*.test.*", "setupTests.js"],
-    plugins: [
-        "@typescript-eslint",
-        "react",
-        "react-hooks",
-        "arca",
-        "unused-imports",
-        "simple-import-sort",
-        "file-progress",
+    reportUnusedDisableDirectives: true,
+    ignorePatterns: [
+        "*.min.*",
+        "*.d.ts",
+        "CHANGELOG.md",
+        "dist",
+        "build",
+        "LICENSE*",
+        "output",
+        "coverage",
+        "public",
+        "temp",
+        "package-lock.json",
+        "pnpm-lock.yaml",
+        "yarn.lock",
+        "__snapshots__",
+        "!.github",
+        "!.vitepress",
+        "!.vscode",
+        ".eslintrc*.*",
+        "tsconfig.json",
+        "vite.config.ts",
+        "prettier.config.js",
+        "mikro-orm.config.ts",
+        ".babel.config.js",
     ],
+    plugins: ["@typescript-eslint", "arca", "unused-imports", "simple-import-sort", "file-progress"],
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:diff/diff",
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
         "plugin:sonarjs/recommended",
         "plugin:unicorn/recommended",
         "plugin:import/recommended",
@@ -50,8 +45,6 @@ module.exports = defineConfig({
         "plugin:prettier/recommended",
     ],
     rules: {
-        "file-progress/activate": 1,
-        "react-hooks/rules-of-hooks": "off", // react-table ->  React Hook "useXXX" is called in function "cell" that is neither a React function component nor a custom React Hook function. react-hooks/rules-of-hooks
         "unused-imports/no-unused-imports": "error",
         "@typescript-eslint/no-explicit-any": "off", // is fine when used in app (vs library) code
         "@typescript-eslint/ban-ts-comment": "off",
@@ -65,13 +58,6 @@ module.exports = defineConfig({
                 extendDefaults: true,
             },
         ],
-        // https://www.npmjs.com/package/eslint-plugin-react
-        "react/jsx-pascal-case": "error",
-        "react/jsx-no-useless-fragment": "error",
-        "react/jsx-no-leaked-render": "error",
-        "react/jsx-no-constructed-context-values": "warn",
-        "react/prop-types": ["error", { ignore: ["children"] }], // lots of false positive on children
-        "react/no-children-prop": "off",
 
         // unicorn
         "unicorn/no-null": "off", // TODO enable it at some point
@@ -130,8 +116,6 @@ module.exports = defineConfig({
         "@typescript-eslint/explicit-member-accessibility": "off",
         "@typescript-eslint/ban-ts-ignore": "off",
         "@typescript-eslint/triple-slash-reference": "off",
-        "jsx-quotes": ["error", "prefer-double"],
-        "react/react-in-jsx-scope": "off",
 
         // https://github.dev/colinhacks/zod/blob/3b75ae584e31d8bd06f7298247cd3d27520cf881/.eslintrc.js#L36
         "import/order": 0, // turn off in favor of eslint-plugin-simple-import-sort
@@ -416,31 +400,4 @@ module.exports = defineConfig({
         // `import/no-duplicates` works better with TypeScript.
         "no-duplicate-imports": "off",
     },
-    overrides: [
-        {
-            // or whatever matches stories specified in .storybook/main.js
-            files: ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-            rules: {
-                "arca/no-default-export": "off",
-                "import/no-unused-modules": "off",
-            },
-        },
-        // disable prop-types rule for js files
-        {
-            files: ["**/*.js?(x)", "**/FixtureCatalog/**"],
-            rules: {
-                "react/prop-types": "off",
-            },
-        },
-        // https://github.com/remix-run/remix/blob/e77e2eb731551db1e70c7c3bd5f73389b97a9574/packages/remix-eslint-config/index.js
-        {
-            files: ["**/views/**/*.js?(x)", "**/views/**/*.tsx"],
-            rules: {
-                // Routes may use default exports without a name. At the route level
-                // identifying components for debugging purposes is less of an issue, as
-                // the route boundary is more easily identifiable.
-                "react/display-name": "off",
-            },
-        },
-    ],
 });
