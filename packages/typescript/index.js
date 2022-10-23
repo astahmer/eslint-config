@@ -7,10 +7,11 @@ module.exports = defineConfig({
     parserOptions: {
         ecmaVersion: 2022,
         project: ["./tsconfig.json"],
+        createDefaultProgram: false,
     },
     reportUnusedDisableDirectives: true,
     ignorePatterns: [
-        "node_modules",
+        "**/node_modules/*",
         "*.min.*",
         "*.d.ts",
         "CHANGELOG.md",
@@ -124,7 +125,7 @@ module.exports = defineConfig({
         "import/no-duplicates": 1,
 
         // https://github.com/TanStack/query/blob/9511933f258b9f87f000938d1583e2b301e3d912/.eslintrc
-        "import/no-cycle": "error",
+        "import/no-cycle": ["error", { maxDepth: 6, ignoreExternal: true }],
         "import/no-unused-modules": ["error", { unusedExports: true }],
 
         /**
