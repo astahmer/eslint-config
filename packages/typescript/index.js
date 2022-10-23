@@ -10,6 +10,7 @@ module.exports = defineConfig({
     },
     reportUnusedDisableDirectives: true,
     ignorePatterns: [
+        "node_modules",
         "*.min.*",
         "*.d.ts",
         "CHANGELOG.md",
