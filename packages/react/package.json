@@ -1,6 +1,6 @@
 {
     "name": "@astahmer/eslint-config-react",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/astahmer/eslint-config.git"
@@ -9,22 +9,14 @@
     "main": "dist/astahmer-eslint-config-react.cjs.js",
     "module": "dist/astahmer-eslint-config-react.esm.js",
     "scripts": {
-        "dev": "preconstruct watch",
-        "build": "preconstruct build",
-        "test": "vitest",
-        "release": "pnpm test && pnpm build && pnpm publish && git push",
         "postinstall": "preconstruct dev"
     },
     "license": "ISC",
     "dependencies": {
         "@astahmer/eslint-config-ts": "workspace:^0.1.0",
-        "@babel/core": "^7.19.1",
         "eslint-define-config": "^1.7.0"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.19.1",
-        "@babel/preset-typescript": "^7.18.6",
-        "@preconstruct/cli": "^2.2.1",
         "eslint": "^8.25.0",
         "prettier": "^2.7.1",
         "typescript": "^4.8.3"
@@ -32,16 +24,9 @@
     "peerDependencies": {
         "eslint": "^8.25.0"
     },
-    "preconstruct": {
-        "entrypoints": [
-            "index.ts"
-        ]
-    },
     "files": [
-        "src",
-        "dist"
+        "index.js"
     ],
-    "sideEffects": false,
     "publishConfig": {
         "access": "public"
     }

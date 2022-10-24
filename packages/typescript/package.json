@@ -7,9 +7,6 @@
     },
     "author": "Alexandre Stahmer <alexandre.stahmer@gmail.com>",
     "main": "index.js",
-    "scripts": {
-        "release": "pnpm test && pnpm build && pnpm publish && git push"
-    },
     "license": "ISC",
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^5.39.0",

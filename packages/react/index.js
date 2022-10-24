@@ -1,6 +1,7 @@
-import { defineConfig } from "eslint-define-config";
+// @ts-check
+const { defineConfig } = require("eslint-define-config");
 
-export default defineConfig({
+module.exports = defineConfig({
     root: true,
     parserOptions: {
         jsx: true,

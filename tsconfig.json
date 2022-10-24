@@ -1,25 +1,30 @@
 {
+    // https://github.com/tsconfig/bases/blob/141d65201924bae1c70a0a4e18d05f42fbf93a9a/bases/strictest.json
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "CommonJS",
-        "moduleResolution": "node",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "esModuleInterop": true,
-        "sourceMap": true,
-        "declaration": true,
-        "pretty": true,
-        "strictNullChecks": true,
-        "resolveJsonModule": true,
-        "lib": ["esnext", "dom"],
-        "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "strictPropertyInitialization": false,
-        "isolatedModules": true // https://preconstruct.tools/guides/building-typescript-packages
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+
+        "importsNotUsedAsValues": "error",
+        "checkJs": true,
+
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        //
+        "isolatedModules": true, // https://preconstruct.tools/guides/building-typescript-packages
+        "noEmit": true
     },
-    "include": ["packages/*/src/**/*"],
-    "exclude": ["**/node_modules/**/*", "**/*.spec.ts", "**/*.test.ts"],
-    "types": ["node", "vitest/importMeta"]
+    "exclude": ["**/node_modules/**/*", "**/*.spec.ts", "**/*.test.ts", "**/dist"],
+    //
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Strictest"
 }

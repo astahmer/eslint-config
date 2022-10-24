@@ -19,6 +19,8 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
     },
+    "include": ["./index.js"],
+    "types": ["node"],
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Strictest"
 }
