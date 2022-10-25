@@ -1,6 +1,6 @@
 {
     "name": "@astahmer/eslint-config-react",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "repository": {
         "type": "git",
         "url": "https://github.com/astahmer/eslint-config.git"
