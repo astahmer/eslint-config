@@ -21,7 +21,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@astahmer/eslint-config-ts': workspace:^0.1.0
+      '@astahmer/eslint-config-ts': workspace:^0.1.5
       eslint: ^8.25.0
       eslint-define-config: ^1.7.0
       prettier: ^2.7.1
