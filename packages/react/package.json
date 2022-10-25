@@ -1,6 +1,6 @@
 {
     "name": "@astahmer/eslint-config-react",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "repository": {
         "type": "git",
         "url": "https://github.com/astahmer/eslint-config.git"
@@ -10,7 +10,9 @@
     "license": "ISC",
     "dependencies": {
         "@astahmer/eslint-config-ts": "workspace:^0.1.5",
-        "eslint-define-config": "^1.7.0"
+        "eslint-define-config": "^1.7.0",
+        "eslint-plugin-react": "^7.31.10",
+        "eslint-plugin-react-hooks": "^4.6.0"
     },
     "devDependencies": {
         "eslint": "^8.25.0",
