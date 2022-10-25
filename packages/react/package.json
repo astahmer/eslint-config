@@ -1,16 +1,12 @@
 {
     "name": "@astahmer/eslint-config-react",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/astahmer/eslint-config.git"
     },
     "author": "Alexandre Stahmer <alexandre.stahmer@gmail.com>",
-    "main": "dist/astahmer-eslint-config-react.cjs.js",
-    "module": "dist/astahmer-eslint-config-react.esm.js",
-    "scripts": {
-        "postinstall": "preconstruct dev"
-    },
+    "main": "index.js",
     "license": "ISC",
     "dependencies": {
         "@astahmer/eslint-config-ts": "workspace:^0.1.0",
